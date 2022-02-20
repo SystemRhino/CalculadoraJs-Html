@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Calucladora Em JS Implementadado ao HTML
 
 You can use the [editor on GitHub](https://github.com/SystemRhino/CalculadoraJs/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
@@ -9,21 +9,63 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
 ```markdown
-Syntax highlighted code block
+<!doctype html><html><head></head> 
+ <body> 
+  <h1>Multi Resultados em Js</h1> 
+  <div> 
+   <script>
+     // Declaração das variáveis
+        help = 0;
+        soma = 0;
+        media = 0;
+        vetor = [];
+        do{
+            num1 = 0;
+            num1 = parseInt(prompt("Digite um numero e digite 0 caso queira parar"));
+            if(num1 != 0){
+                vetor.push(num1);
+            }
+        }while(num1 != 0);
 
-# Header 1
-## Header 2
-### Header 3
+        document.write("Sequência original: ");
 
-- Bulleted
-- List
+        for (let i = 0; i < vetor.length; i++) {
+            document.write(vetor[i] + ", ");
+        }
 
-1. Numbered
-2. List
+        document.write("<br/> Ordem decrescente: ");
 
-**Bold** and _Italic_ and `Code` text
+        for (let i = vetor.length - 1; i >= 0; i--) {
+            document.write(vetor[i] + ", ");
+        }
 
-[Link](url) and ![Image](src)
+        for (let i = 0; i < vetor.length; i++) {
+            soma = soma + vetor[i];
+        }
+        
+        media = soma / vetor.length;
+
+        document.write("<br/> Soma: " + soma + "<br/>");
+        document.write("Média Aritmética: " + media + "<br/>");
+
+        for (let i = 0; i < vetor.length; i++) {
+            for (let x1 = 0; x1 < vetor.length - 1; x1++) {
+                if(vetor[x1] > vetor[x1 + 1]){
+                    help = vetor[x1];
+                    vetor[x1] = vetor[x1 + 1];
+                    vetor[x1 + 1] = help;
+                }
+            }
+        }
+        document.write("Ordem crescente: ");
+        for (let i = 0; i < vetor.length; i++) {
+            document.write(vetor[i] + ", ");
+        }
+    </script>
+  </div> 
+ 
+</body></html>
+
 ```
 
 For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
